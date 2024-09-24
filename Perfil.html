@@ -16,26 +16,26 @@
 				<div class="top">
 
 					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Bartolomeu</h1>
-							<p>Gatinho, O Funcionario Do Mês</p>
-						</div>
+					<div id="logo">
+						<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+						<h1 id="title">Bartolomeu</h1>
+						<p>Gatinho, O Funcionario Do Mês</p>
+					</div>
 
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
 
-								<li><a href="#"><span class="icon solid fa-user">Seu Perfil</span></a></li>
-								<li><a href="Produtos.html"><span class="icon solid fa-th">Produtos</span></a></li>
-								<li><a href="Categorias.html"><span class="icon solid fa-th">Categorias</span></a></li>
-								<li><a href="#"><span class="icon solid fa-envelope">Fornecedores</span></a></li>
-								<li><a href="#"><span class="icon solid bi bi box-seam">Estoque</span></a></li>
+							<li><a href="Perfil.html"><span class="icon solid fa-user">Seu Perfil</span></a></li>
+							<li><a href="Produtos.html"><span class="icon bi bi-basket-fill">Produtos</span></a></li>
+							<li><a href="Categorias.html"><span class="icon solid fa-th">Categorias</span></a></li>
+							<li><a href="#"><span class="icon bi bi-person-hearts">Fornecedores</span></a></li>
+							<li><a href="#"><span class="icon bi bi-box2-fill">Estoque</span></a></li>
 
-							</ul>
-						</nav>
-				</div>
+						</ul>
+					</nav>
 			</div>
+		</div>
 
 		<!-- Main -->
 			<div id="main">
@@ -43,24 +43,68 @@
 				<!-- Intro -->
 					<section>
 						<div class="container">
+							<div class="row justify-content-center">
+							  <div class="col-lg-6 col-md-8 col-sm-12">
+								<div class="card shadow">
+								  <div class="card-header bg-dark text-dark text-center">
+									<h3 style="color: white;">Meu Perfil</h3>
+								  </div>
+								  <div class="card-body">
+									<form>
+									  
+									  <!-- Avatar Upload -->
+									  <div class="avatar-upload">
+										<img src="https://via.placeholder.com/150" alt="Avatar" id="avatarPreview">
+										<div class="mt-2">
+										  <label for="avatarInput" class="btn btn-outline-primary">
+											<i class="bi bi-upload"></i> Alterar Foto
+										  </label>
+										  <input type="file" class="form-control d-none" id="avatarInput" accept="image/*" onchange="previewAvatar()">
+										</div>
+									  </div>
+					  
+									  <!-- Nome Completo -->
+									  <div class="mb-3">
+										<label for="fullName" class="form-label">Nome Completo</label>
+										<input type="text" class="form-control" id="fullName" placeholder="Atualize seu nome completo">
+									  </div>
 
-								<form>
-                                    <div class="mb-3">
-                                      <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                                    </div>
-                                    <div class="mb-3">
-                                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                                      <input type="password" class="form-control" id="exampleInputPassword1">
-                                    </div>
-                                    <div class="mb-3 form-check">
-                                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                  </form>
-						</div>
+									  <div class="mb-3">
+										<label for="cpf" class="form-label">CPF</label>
+										<input type="number" class="form-control" id="cpf" placeholder="Digite seu CPF">
+									  </div>
+					  
+									  <!-- Email -->
+									  <div class="mb-3">
+										<label for="email" class="form-label">Email</label>
+										<input type="email" class="form-control" id="email" placeholder="Atualize seu email">
+									  </div>
+					  
+									  <!-- Senha -->
+									  <div class="mb-3">
+										<label for="password" class="form-label">Nova Senha</label>
+										<input type="password" class="form-control" id="password" placeholder="Digite a nova senha">
+									  </div>
+					  
+									  <!-- Confirmar Senha -->
+									  <div class="mb-3">
+										<label for="confirmPassword" class="form-label">Confirmar Nova Senha</label>
+										<input type="password" class="form-control" id="confirmPassword" placeholder="Confirme sua nova senha">
+									  </div>
+					  
+									  <!-- Botão de Atualizar -->
+									  <div class="d-grid">
+										<button type="submit" class="btn btn-dark btn-lg">
+										  <i class="bi bi-save"></i> Atualizar Perfil
+										</button>
+									  </div>
+					  
+									</form>
+								  </div>
+								</div>
+							  </div>
+							</div>
+						  </div>
 					</section>
 	</body>
 
@@ -75,6 +119,24 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
     		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+			<script>
+				function previewAvatar() {
+				  const input = document.getElementById('avatarInput');
+				  const preview = document.getElementById('avatarPreview');
+		  
+				  const file = input.files[0];
+				  const reader = new FileReader();
+				  
+				  reader.onload = function(e) {
+					preview.src = e.target.result;
+				  }
+		  
+				  if (file) {
+					reader.readAsDataURL(file);
+				  }
+				}
+			  </script>
 
   </body>
 </html>
