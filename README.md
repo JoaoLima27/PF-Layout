@@ -1,0 +1,5 @@
+HOME - OK <br>
+PERFIL - OK, MAS PODE MELHORAR <br>
+PRODUTOS - OK <br>
+FPRNECEDORES - 90% <br>
+ESTOQUE - 0%<br>
